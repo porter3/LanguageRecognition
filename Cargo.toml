@@ -1,16 +1,17 @@
 [package]
-name = "ssvm_nodejs_starter"
+name = "language_detector"
 version = "0.1.0"
-authors = ["ubuntu"]
+authors = ["Jake Porter"]
 edition = "2018"
 
 [package.metadata.ssvmup.profile.release]
 wasm-opt = ['-O4']
 
 [lib]
-name = "ssvm_nodejs_starter_lib"
-path = "src/lib.rs"
+name = "language_detector"
+path = "src/language_detector.rs"
 crate-type =["cdylib"]
 
 [dependencies]
-wasm-bindgen = "=0.2.61"
+wasm-bindgen = "0.2.61"
+whatlang = "0.9.0"
