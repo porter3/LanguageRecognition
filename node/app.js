@@ -16,13 +16,10 @@ app.listen(port, host, () => console.log(`Server running at http://${host}:${por
 app.use(express.json())
 
 app.post('/getLang', (req, res) => {
-  console.log('This endpoint is being accessed')
   const DELIMITER = '-:::-'
   const text = req.body.text
-  console.log(text)
   const infoString = determine_language(text)
   const [ language, confidence, isReliable ] = infoString.split(DELIMITER)
-  console.log(language + confidence + isReliable)
   return res.status(200).json({
     language: language,
     confidence: confidence,
